@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.krupique.trabalho01.init.TelaPrincipalController">
+   <top>
+      <VBox prefHeight="75.0" prefWidth="800.0" style="-fx-background-color: #DFDFDF;" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <ImageView fx:id="imageview" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label text="MafaGRAFOS">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Realizado por: Henrique Krupck">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="paneGrafos" layoutX="327.0" layoutY="81.0" onMouseClicked="#teste" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="949.0" layoutY="292.0" onAction="#evtAddVertice" style="-fx-background-color: #BBBBBB;" text="Inserir vértice" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="158.0" prefWidth="1080.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="vboxMA" prefHeight="200.0" prefWidth="310.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="15.0" prefWidth="100.0" style="-fx-background-color: black;">
+                     <children>
+                        <Label text="Matriz de Adjacência" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableMA" prefHeight="139.0" prefWidth="100.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Vértices" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxMI" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="15.0" prefWidth="100.0" style="-fx-background-color: black;">
+                     <children>
+                        <Label text="Matriz de Incidência" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableMI" prefHeight="139.0" prefWidth="100.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="Vértices" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxLista" layoutX="110.0" layoutY="10.0" prefHeight="200.0" prefWidth="310.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="15.0" prefWidth="100.0" style="-fx-background-color: black;">
+                     <children>
+                        <Label text="Lista Encadeada" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableLista" prefHeight="139.0" prefWidth="100.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="Vértices" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
