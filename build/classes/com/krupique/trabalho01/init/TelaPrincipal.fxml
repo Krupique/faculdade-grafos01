@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -55,19 +58,8 @@
          </children>
       </VBox>
    </top>
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <AnchorPane fx:id="paneGrafos" layoutX="327.0" layoutY="81.0" onMouseClicked="#teste" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #000000;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-               <children>
-                  <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="949.0" layoutY="292.0" onAction="#evtAddVertice" style="-fx-background-color: #BBBBBB;" text="Inserir vértice" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-   </center>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="158.0" prefWidth="1080.0" spacing="15.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="180.0" prefWidth="1080.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
             <VBox fx:id="vboxMA" prefHeight="200.0" prefWidth="310.0">
                <children>
@@ -124,6 +116,61 @@
                </children>
             </VBox>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
       </HBox>
    </bottom>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="367.0" prefWidth="340.0">
+               <children>
+                  <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="13.0" layoutY="46.0" onAction="#evtAddVertice" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #BBBBBB;" text="Inserir Grafo" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font name="Calibri Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" text="Inserir" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="cbInicio" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="85.0" prefHeight="30.0" prefWidth="50.0" promptText="Inicio" unFocusColor="BLACK" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="100.0" />
+                  <JFXComboBox fx:id="cbFim" labelFloat="true" layoutX="131.0" layoutY="85.0" prefHeight="30.0" prefWidth="50.0" promptText="Fim" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="100.0" />
+                  <JFXTextField fx:id="txtValor" labelFloat="true" layoutX="225.0" layoutY="85.0" prefHeight="30.0" prefWidth="50.0" promptText="Valor" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="100.0" />
+                  <JFXComboBox fx:id="cbVertice" layoutX="22.0" layoutY="209.0" prefHeight="30.0" prefWidth="80.0" promptText="Grafo" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="215.0" />
+                  <JFXComboBox fx:id="cbLigacao" layoutX="22.0" layoutY="256.0" prefHeight="30.0" prefWidth="80.0" promptText="Ligação" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="255.0" />
+                  <Label layoutX="15.0" layoutY="162.0" prefHeight="30.0" text="Remover" AnchorPane.topAnchor="180.0">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnAddCaminho" buttonType="RAISED" layoutX="201.0" layoutY="100.0" onAction="#evtAddCaminho" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #BBBBBB;" text="Inserir ligação" AnchorPane.leftAnchor="205.0" AnchorPane.topAnchor="100.0">
+                     <font>
+                        <Font name="Calibri Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnRmvGrafo" buttonType="RAISED" layoutX="142.0" layoutY="213.0" onAction="#evtRmvGrafo" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #BBBBBB;" text="Remover grafo" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="215.0">
+                     <font>
+                        <Font name="Calibri Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnRmvLigacao" buttonType="RAISED" layoutX="160.0" layoutY="266.0" onAction="#evtRmvLigacao" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #BBBBBB;" text="Remover ligação" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="255.0">
+                     <font>
+                        <Font name="Calibri Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneGrafos" onMouseClicked="#teste" prefHeight="367.0" prefWidth="770.0" style="-fx-border-color: #000000;" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </center>
 </BorderPane>
